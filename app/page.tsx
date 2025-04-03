@@ -44,6 +44,13 @@ export default function Home() {
       <section
         ref={heroRef}
         className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8"
+        style={{
+          backgroundImage: `url('/ballaForcePaysage.jpg')`,
+
+          // backgroundSize: "150%",
+          // backgroundPosition: "50% 65%",
+          backgroundSize: "cover",
+        }}
       >
         <div className="container mx-auto py-24 md:py-32">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6 fade-in-element">
@@ -89,6 +96,7 @@ export default function Home() {
                 src={loulou}
                 alt="Louis Sanson"
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
           </div>
