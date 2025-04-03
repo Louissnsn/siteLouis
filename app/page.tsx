@@ -1,103 +1,128 @@
+"use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+import loulou from "@/public/DSC00365.jpg";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const heroRef = useRef<HTMLDivElement>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    const fadeInElements = document.querySelectorAll(".fade-in-element");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            entry.target.classList.add("opacity-100");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    fadeInElements.forEach((el) => {
+      el.classList.add("opacity-0");
+      observer.observe(el);
+    });
+
+    return () => {
+      fadeInElements.forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
+  return (
+    <>
+      <Header />
+
+      {/* Hero Section */}
+
+      <section
+        ref={heroRef}
+        className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8"
+      >
+        <div className="container mx-auto py-24 md:py-32">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6 fade-in-element">
+            Concepteur <br />& Développeur full-stack
+          </h1>
+          <p
+            className="text-xl md:text-2xl text-muted-foreground max-w-xl fade-in-element"
+            style={{ transitionDelay: "0.2s" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Je conçois et développe des solutions web sur mesure, épurées et
+            efficaces.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-12 md:py-24 px-4 md:px-8 bg-secondary">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="fade-in-element">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
+                About Me
+              </h2>
+              <p className="mb-4 text-muted-foreground">
+                Je suis développeur full-stack basé à Villeurbanne. J'ai une
+                passion pour la création de solutions web élégantes et
+                fonctionnelles qui répondent aux besoins des utilisateurs.
+              </p>
+              <p className="mb-4 text-muted-foreground">
+                Mon expérience couvre une large gamme de technologies, y compris
+                React, Next.js, Node.js et bien d'autres. J'aime relever des
+                défis techniques et trouver des solutions innovantes pour
+                améliorer l'expérience utilisateur.
+              </p>
+              <p className="text-muted-foreground">
+                Lorsque je ne code pas, vous pourrez me trouver en train de
+                vadrouiller en nature ou dans un musée !
+              </p>
+            </div>
+
+            <div className="aspect-square bg-muted fade-in-element overflow-hidden">
+              <Image
+                src={loulou}
+                alt="Louis Sanson"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-12 md:py-24 px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center fade-in-element">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
+                On s'appelle ?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Je suis à l'écoute de nouvelles opportunités et collaborations.
+                N'hésitez pas à me contacter pour discuter de vos projets ou
+                simplement pour dire bonjour !
+              </p>
+            </div>
+
+            <div className="border rounded-lg p-8 fade-in-element">
+              <a
+                href="mailto:sanson.louis@gmail.com"
+                className="text-xl md:text-2xl font-medium hover:text-primary/80 block text-center transition-colors"
+              >
+                sanson.louis@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
   );
 }
