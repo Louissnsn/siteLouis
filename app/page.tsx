@@ -31,7 +31,7 @@ const projets = [
     category: "Application mobile",
     imageUrl:
       "/images/globe.svg",
-    link: "https://lasyncope.fr",
+    link: "https://github.com/Louissnsn?tab=repositories",
   },
   {
     id: 4,
