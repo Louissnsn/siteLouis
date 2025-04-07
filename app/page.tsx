@@ -59,7 +59,6 @@ export default function Home() {
     ]
   );
 
-  if (isMobile === undefined) return null;
 
 
   return (
