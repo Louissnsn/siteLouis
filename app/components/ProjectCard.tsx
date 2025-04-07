@@ -1,5 +1,6 @@
 import { cn } from "@/public/lib/utils";
-// import Image from "next/image";
+import Image from "next/image";
+import Link from "next/link";
 interface ProjectCardProps {
   title: string;
   category: string;
@@ -16,7 +17,7 @@ export default function ProjectCard({
   className,
 }: ProjectCardProps) {
     return (
-        <a 
+        <Link 
         href={link}
         className={cn(
           "group block relative overflow-hidden aspect-[4/3] bg-muted",
@@ -27,10 +28,11 @@ export default function ProjectCard({
         
         <div className="relative h-full w-full overflow-hidden">
           {imageUrl && (
-            <img 
+            <Image 
               src={imageUrl} 
               alt={title} 
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
           )}
         </div>
@@ -41,6 +43,6 @@ export default function ProjectCard({
             <h3 className="text-lg md:text-xl font-medium text-foreground">{title}</h3>
           </div>
         </div>
-      </a>
+      </Link>
     )
 }

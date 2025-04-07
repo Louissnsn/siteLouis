@@ -1,10 +1,12 @@
 "use client";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import loulou from "@/public/DSC00365.jpeg";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 import FadeInWhenVisible from "./components/FadeInWhenVisible";
+import { useIsMobile } from "./hooks/useIsMobile";
 
 const projets = [
   {
@@ -12,7 +14,7 @@ const projets = [
     title: "Site Syncope",
     category: "Site vitrine",
     imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+      "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
   {
@@ -20,7 +22,7 @@ const projets = [
     title: "Emploi avenir",
     category: "Application web",
     imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+      "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
   {
@@ -28,7 +30,7 @@ const projets = [
     title: "Globe Spinner",
     category: "Application mobile",
     imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+      "/images/globe.svg",
     link: "https://lasyncope.fr",
   },
   {
@@ -36,33 +38,58 @@ const projets = [
     title: "Site Balla Force",
     category: "Site vitrine",
     imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+      "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
 ];
 
 export default function Home() {
+  const isMobile = useIsMobile();
+  const { scrollY } = useScroll();
+
+  // Image scale + losange effect
+  const scale = useTransform(scrollY, [0, 300], [1, 0.85]);
+  const clipPath = useTransform(
+    scrollY,
+    [0, 300, 600],
+    [
+      "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", // rectangle
+      "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)", // losange
+      "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)", // reste figé
+    ]
+  );
+
+  if (isMobile === undefined) return null;
+
+
   return (
     <>
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8"
-        style={{
-          backgroundImage: `url('/ballaForcePaysage.jpg')`,
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="container mx-auto py-24 md:py-32">
+      <section className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8">
+        {isMobile === false && (
+          <motion.div
+            className="absolute inset-0 z-0 origin-center"
+            style={{
+              backgroundImage: `url('/lissitzky.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              clipPath,
+              scale,
+            }}
+          />
+        )}
+
+        <div className="z-10 container mx-auto py-24 md:py-32">
           <FadeInWhenVisible>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6 z-5">
               Concepteur <br />& Développeur full-stack
             </h1>
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.3}>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-xl ">
               Je conçois et développe des solutions web sur mesure, épurées et
               efficaces.
             </p>
@@ -79,7 +106,7 @@ export default function Home() {
                 Projets sélectionnés
               </h2>
               <p className="text-muted-foreground">
-                Quelques projets sur lesquels j'ai récemment travaillé !
+                Quelques projets sur lesquels j&apos;ai récemment travaillé !
               </p>
             </div>
           </FadeInWhenVisible>
@@ -109,15 +136,15 @@ export default function Home() {
                   A propos de moi
                 </h2>
                 <p className="mb-4 text-muted-foreground">
-                  Je suis développeur full-stack basé à Villeurbanne. J'ai une
+                  Je suis développeur full-stack basé à Villeurbanne. J&apos;ai une
                   passion pour la création de solutions web élégantes et
                   fonctionnelles qui répondent aux besoins des utilisateurs.
                 </p>
                 <p className="mb-4 text-muted-foreground">
                   Mon expérience couvre une large gamme de technologies, y
-                  compris React, Next.js, Node.js et bien d'autres. J'aime
+                  compris React, Next.js, Node.js et bien d&apos;autres. J&apos;aime
                   relever des défis techniques et trouver des solutions
-                  innovantes pour améliorer l'expérience utilisateur.
+                  innovantes pour améliorer l&apos;expérience utilisateur.
                 </p>
                 <p className="text-muted-foreground">
                   Lorsque je ne code pas, vous pourrez me trouver en train de
@@ -146,11 +173,11 @@ export default function Home() {
           <FadeInWhenVisible>
             <div className="max-w-2xl mx-auto text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
-                On s'appelle ?
+                On s&apos;appelle ?
               </h2>
               <p className="text-muted-foreground">
-                Je suis à l'écoute de nouvelles opportunités et collaborations.
-                N'hésitez pas à me contacter pour discuter de vos projets ou
+                Je suis à l&apos;écoute de nouvelles opportunités et collaborations.
+                N&apos;hésitez pas à me contacter pour discuter de vos projets ou
                 simplement pour dire bonjour !
               </p>
             </div>

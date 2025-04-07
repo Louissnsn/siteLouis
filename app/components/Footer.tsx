@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -19,28 +20,28 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <Link
                   href="#work"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#about"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#contact"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,24 +52,24 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <Link
                   href="https://github.com/LouisSnsn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Github
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://linkedin.com/in/louis-sanson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
                 >
                   LinkedIn
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

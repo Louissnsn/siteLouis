@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { cn } from '@/public/lib/utils';
 
@@ -20,12 +21,12 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <a href="/" className="text-lg font-medium tracking-tight">Louis Sanson</a>
+        <Link href="/" className="text-lg font-medium tracking-tight">Louis Sanson</Link>
         
         <nav className="hidden md:flex space-x-8 text-sm">
-          <a href="#work" className="hover-underline transition-colors hover:text-foreground/80">Work</a>
-          <a href="#about" className="hover-underline transition-colors hover:text-foreground/80">About</a>
-          <a href="#contact" className="hover-underline transition-colors hover:text-foreground/80">Contact</a>
+          <Link href="#work" className="hover-underline transition-colors hover:text-foreground/80">Work</Link>
+          <Link href="#about" className="hover-underline transition-colors hover:text-foreground/80">About</Link>
+          <Link href="#contact" className="hover-underline transition-colors hover:text-foreground/80">Contact</Link>
         </nav>
         
         <div className="md:hidden">
