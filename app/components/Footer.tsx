@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/louis-sanson"
+                  href="https://linkedin.com/in/louis-sanson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-underline text-muted-foreground hover:text-foreground transition-colors"
@@ -76,7 +76,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t text-sm text-muted-foreground flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {currentYear} Louis Sanson. Tous droits réservés.</p>
-          <p className="mt-2 md:mt-0">Fait avec amour</p>
+          <p className="mt-2 md:mt-0">Fait avec amour à Villeurbanne</p>
         </div>
       </div>
     </footer>

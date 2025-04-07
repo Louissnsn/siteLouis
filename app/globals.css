@@ -67,13 +67,14 @@
   /* * {
     @apply border-border;
   } */
-  html,
+
+  /* html,
   body,
   div,
   section,
   article {
     @apply border-border;
-  }
+  }  */
 
   body {
     background-color: hsl(var(--background));
