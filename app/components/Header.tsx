@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/public/lib/utils";
 import {
   Drawer,
@@ -31,35 +31,43 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="text-lg font-medium tracking-tight">
-          Patrick David
-        </a>
+        <Link href="#" className="text-lg font-medium tracking-tight">
+          Louis Sanson
+        </Link>
 
         <nav className="hidden md:flex space-x-8 text-sm">
-          <a
+          <Link
             href="#work"
             className="hover-underline transition-colors hover:text-foreground/80"
           >
             Work
-          </a>
-          <a
+          </Link>
+          <Link
             href="#about"
             className="hover-underline transition-colors hover:text-foreground/80"
           >
             About
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
             className="hover-underline transition-colors hover:text-foreground/80"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
+        {/* Mobile menu */}
         <div className="md:hidden">
           <Drawer>
             <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Menu">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Menu"
+                onPointerDown={(e) => {
+                  e.currentTarget.blur(); // enlève le focus avant ouverture
+                }}
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </DrawerTrigger>
