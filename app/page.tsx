@@ -18,18 +18,20 @@ const projets = [
   },
   {
     id: 2,
-    title: "Emploi avenir",
-    category: "Application web",
-    imageUrl: "/images/syncope.png",
-    link: "https://lasyncope.fr",
-  },
-  {
-    id: 3,
     title: "Globe Spinner",
     category: "Application mobile",
     imageUrl: "/images/globe.svg",
-    link: "https://github.com/Louissnsn?tab=repositories",
+    link: "https://github.com/Louissnsn/globe-spinner-frontend",
   },
+
+  {
+    id: 3,
+    title: "Mon portfolio",
+    category: "Application web",
+    imageUrl: "/images/ls.png",
+    link: "https://github.com/Louissnsn/siteLouis/",
+  },
+
   {
     id: 4,
     title: "Site Balla Force",
