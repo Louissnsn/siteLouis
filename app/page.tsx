@@ -13,32 +13,28 @@ const projets = [
     id: 1,
     title: "Site Syncope",
     category: "Site vitrine",
-    imageUrl:
-      "/images/syncope.png",
+    imageUrl: "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
   {
     id: 2,
     title: "Emploi avenir",
     category: "Application web",
-    imageUrl:
-      "/images/syncope.png",
+    imageUrl: "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
   {
     id: 3,
     title: "Globe Spinner",
     category: "Application mobile",
-    imageUrl:
-      "/images/globe.svg",
+    imageUrl: "/images/globe.svg",
     link: "https://github.com/Louissnsn?tab=repositories",
   },
   {
     id: 4,
     title: "Site Balla Force",
     category: "Site vitrine",
-    imageUrl:
-      "/images/syncope.png",
+    imageUrl: "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
 ];
@@ -61,14 +57,22 @@ export default function Home() {
 
   if (isMobile === undefined) return null;
 
-
   return (
     <>
       <Header />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8">
-        {isMobile === false && (
+      <section className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8 relative">
+        {isMobile ? (
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url('/lissitzky.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ) : (
           <motion.div
             className="absolute inset-0 z-0 origin-center"
             style={{
@@ -83,13 +87,13 @@ export default function Home() {
 
         <div className="z-10 container mx-auto py-24 md:py-32">
           <FadeInWhenVisible>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6 z-5">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter mb-6">
               Concepteur <br />& Développeur full-stack
             </h1>
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.3}>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-xl ">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
               Je conçois et développe des solutions web sur mesure, épurées et
               efficaces.
             </p>
@@ -136,15 +140,16 @@ export default function Home() {
                   A propos de moi
                 </h2>
                 <p className="mb-4 text-muted-foreground">
-                  Je suis développeur full-stack basé à Villeurbanne. J&apos;ai une
-                  passion pour la création de solutions web élégantes et
+                  Je suis développeur full-stack basé à Villeurbanne. J&apos;ai
+                  une passion pour la création de solutions web élégantes et
                   fonctionnelles qui répondent aux besoins des utilisateurs.
                 </p>
                 <p className="mb-4 text-muted-foreground">
                   Mon expérience couvre une large gamme de technologies, y
-                  compris React, Next.js, Node.js et bien d&apos;autres. J&apos;aime
-                  relever des défis techniques et trouver des solutions
-                  innovantes pour améliorer l&apos;expérience utilisateur.
+                  compris React, Next.js, Node.js et bien d&apos;autres.
+                  J&apos;aime relever des défis techniques et trouver des
+                  solutions innovantes pour améliorer l&apos;expérience
+                  utilisateur.
                 </p>
                 <p className="text-muted-foreground">
                   Lorsque je ne code pas, vous pourrez me trouver en train de
@@ -176,9 +181,9 @@ export default function Home() {
                 On s&apos;appelle ?
               </h2>
               <p className="text-muted-foreground">
-                Je suis à l&apos;écoute de nouvelles opportunités et collaborations.
-                N&apos;hésitez pas à me contacter pour discuter de vos projets ou
-                simplement pour dire bonjour !
+                Je suis à l&apos;écoute de nouvelles opportunités et
+                collaborations. N&apos;hésitez pas à me contacter pour discuter
+                de vos projets ou simplement pour dire bonjour !
               </p>
             </div>
           </FadeInWhenVisible>
