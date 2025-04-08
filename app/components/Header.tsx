@@ -13,13 +13,23 @@ import { Button } from "@/app/components/ui/Button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Changement de style du header au scroll
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (id: string) => {
+    setDrawerOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <header
@@ -34,7 +44,6 @@ export default function Header() {
         <Link href="#" className="text-lg font-medium tracking-tight">
           Louis Sanson
         </Link>
-
         <nav className="hidden md:flex space-x-8 text-sm">
           <Link
             href="#work"
@@ -55,17 +64,16 @@ export default function Header() {
             Contact
           </Link>
         </nav>
-
-        {/* Mobile menu */}
+        Link
         <div className="md:hidden">
-          <Drawer>
+          <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
             <DrawerTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon"
                 aria-label="Menu"
                 onPointerDown={(e) => {
-                  e.currentTarget.blur(); // enlève le focus avant ouverture
+                  e.currentTarget.blur();
                 }}
               >
                 <Menu className="h-6 w-6" />
@@ -75,22 +83,31 @@ export default function Header() {
               <div className="flex flex-col space-y-6 p-6 items-center justify-center h-full">
                 <Link
                   href="#work"
-                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80 animate-fade-in"
-                  style={{ animationDelay: "100ms" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("work");
+                  }}
+                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80"
                 >
                   Work
                 </Link>
                 <Link
                   href="#about"
-                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80 animate-fade-in"
-                  style={{ animationDelay: "200ms" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("about");
+                  }}
+                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80"
                 >
                   About
                 </Link>
                 <Link
                   href="#contact"
-                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80 animate-fade-in"
-                  style={{ animationDelay: "300ms" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("contact");
+                  }}
+                  className="text-xl font-medium hover-underline transition-colors hover:text-foreground/80"
                 >
                   Contact
                 </Link>
