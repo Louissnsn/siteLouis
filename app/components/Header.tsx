@@ -64,7 +64,6 @@ export default function Header() {
             Contact
           </Link>
         </nav>
-        Link
         <div className="md:hidden">
           <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
             <DrawerTrigger asChild>
