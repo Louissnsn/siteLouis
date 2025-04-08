@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Bienvenue sur mon site ! Celui-ci a entièrement été conçu avec NextJS et React. J'ai aussi utilisé TailwindCSS et plusieurs librairie pour les animations ! 
 
 ## Getting Started
 
