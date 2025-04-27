@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Louis Sanson",
+  title: "Portfolio de Louis Sanson",
   description: "Bienvenue sur mon portfolio !",
   icons: {
     icon: "/favicon.png",
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
       >
