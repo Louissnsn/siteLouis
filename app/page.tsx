@@ -32,13 +32,13 @@ const projets = [
     link: "https://github.com/Louissnsn/siteLouis/",
   },
 
-  // {
-  //   id: 4,
-  //   title: "Site Balla Force",
-  //   category: "Site vitrine",
-  //   imageUrl: "/images/syncope.png",
-  //   link: "https://lasyncope.fr",
-  // },
+  {
+    id: 4,
+    title: "Serveur HTTP",
+    category: "Projet personnel",
+    imageUrl: "/images/serveur.png",
+    link: "https://github.com/Louissnsn/codecrafters-http-server.git",
+  },
 ];
 
 export default function Home() {
