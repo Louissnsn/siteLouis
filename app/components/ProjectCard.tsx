@@ -20,13 +20,13 @@ export default function ProjectCard({
     <Link
       href={link}
       className={cn(
-        "group block relative overflow-hidden aspect-[4/3] bg-muted",
+        "group block relative overflow-visible aspect-[4/3] bg-muted",
         className
       )}
     >
       <div className="absolute inset-0 bg-pink group-hover:bg-black/10 transition-colors duration-300"></div>
 
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-full w-full overflow-visible">
         {imageUrl && (
           <Image
             src={imageUrl}
