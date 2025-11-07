@@ -16,12 +16,13 @@ const projets = [
     imageUrl: "/images/syncope.png",
     link: "https://lasyncope.fr",
   },
-  {
+
+    {
     id: 2,
-    title: "Globe Spinner",
-    category: "Application mobile",
-    imageUrl: "/images/globe.svg",
-    link: "https://github.com/Louissnsn/globe-spinner-frontend",
+    title: "Compagnie Datura",
+    category: "Site vitrine",
+    imageUrl: "/images/datura.jpg",
+    link: "https://cie-datura.vercel.app",
   },
 
   {
@@ -34,10 +35,10 @@ const projets = [
 
   {
     id: 4,
-    title: "Serveur HTTP",
-    category: "Projet personnel",
-    imageUrl: "/images/serveur.png",
-    link: "https://github.com/Louissnsn/codecrafters-http-server.git",
+    title: "Globe Spinner",
+    category: "Application mobile",
+    imageUrl: "/images/globe.svg",
+    link: "https://github.com/Louissnsn/globe-spinner-frontend",
   },
 ];
 
