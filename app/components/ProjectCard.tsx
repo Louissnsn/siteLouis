@@ -19,6 +19,8 @@ export default function ProjectCard({
   return (
     <Link
       href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "group block relative overflow-visible aspect-[4/3] bg-muted",
         className
