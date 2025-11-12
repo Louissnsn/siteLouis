@@ -17,12 +17,12 @@ const projets = [
     link: "https://lasyncope.fr",
   },
 
-    {
+  {
     id: 2,
     title: "Compagnie Datura",
     category: "Site vitrine",
     imageUrl: "/images/datura.jpg",
-    link: "https://cie-datura.vercel.app",
+    link: "https://cie-datura.fr",
   },
 
   {
