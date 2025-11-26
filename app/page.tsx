@@ -14,7 +14,7 @@ const projets = [
     title: "Site Syncope",
     category: "Site vitrine",
     imageUrl: "/images/syncope.png",
-    link: "https://lasyncope.fr",
+    link: "https://www.lasyncope.fr",
   },
 
   {
@@ -22,7 +22,7 @@ const projets = [
     title: "Compagnie Datura",
     category: "Site vitrine",
     imageUrl: "/images/datura.jpg",
-    link: "https://cie-datura.fr",
+    link: "https://www.cie-datura.fr",
   },
 
   {
@@ -30,7 +30,7 @@ const projets = [
     title: "Ménage Conciergerie",
     category: "Application web",
     imageUrl: "/images/particulier.webp",
-    link: "https://menage-conciergerie.fr",
+    link: "https://www.menage-conciergerie.fr",
   },
 
   {
