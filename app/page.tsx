@@ -14,7 +14,7 @@ const projets = [
     title: "Site Syncope",
     category: "Site vitrine",
     imageUrl: "/images/syncope.png",
-    link: "www.lasyncope.fr",
+    link: "https://www.lasyncope.fr",
   },
 
   {
@@ -30,7 +30,7 @@ const projets = [
     title: "Ménage Conciergerie",
     category: "Application web",
     imageUrl: "/images/particulier.webp",
-    link: "www.menage-conciergerie.fr",
+    link: "https://www.menage-conciergerie.fr",
   },
 
   {
