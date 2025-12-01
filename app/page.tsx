@@ -27,19 +27,19 @@ const projets = [
 
   {
     id: 3,
+    title: "Ensemble Phænomen",
+    category: "Site vitrine",
+    imageUrl: "/images/LOGO_ROSE_SVG.svg",
+    link: "https://www.ensemble-phaenomen.eu/",
+  },
+  {
+    id: 4,
     title: "Ménage Conciergerie",
     category: "Application web",
     imageUrl: "/images/particulier.webp",
     link: "https://www.menage-conciergerie.fr",
   },
 
-  {
-    id: 4,
-    title: "Globe Spinner",
-    category: "Application mobile",
-    imageUrl: "/images/globe.svg",
-    link: "https://github.com/Louissnsn/globe-spinner-frontend",
-  },
 ];
 
 export default function Home() {
